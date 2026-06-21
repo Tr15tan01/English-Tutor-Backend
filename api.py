@@ -10,6 +10,11 @@ from ddgs import DDGS
 from dotenv import load_dotenv
 import math
 import uvicorn
+from googlesearch import search
+import time
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 
@@ -27,6 +32,41 @@ def search_web(query: str) -> str:
             return "No relevant search results found."
     except Exception as e:
         return f"Search error: {str(e)}"
+
+# def search_web(query: str) -> str:
+#     try:
+#         # Use advanced=True to get title, url, description (snippets)
+#         results = list(search(query, num_results=3, advanced=True))
+#         if not results:
+#             return "No relevant search results found."
+
+#         snippets = [res.description for res in results if res.description]
+#         print(snippets)
+#         if snippets:
+#             return "\n".join(snippets)
+#         else:
+#             return "No text snippets found in the search results."
+
+#     except Exception as e:
+#         return f"Search error: {str(e)}"
+
+# def search_web(query: str) -> str:
+#     logger.info(f"🔍 Searching for: {query}")
+#     try:
+#         results = list(search(query, num_results=3, advanced=True))
+#         logger.info(f"✅ Got {len(results)} results")
+#         if not results:
+#             return "No relevant search results found."
+#         snippets = [res.description for res in results if res.description]
+#         logger.info(f"📄 Snippets: {snippets}")
+#         if snippets:
+#             return "\n".join(snippets)
+#         else:
+#             return "No text snippets found in the search results."
+#     except Exception as e:
+#         logger.error(f"❌ Search error: {e}")
+#         return f"Search error: {str(e)}"
+    
 
 def calculate(expression: str) -> str:
     try:

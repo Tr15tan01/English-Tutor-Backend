@@ -1,6 +1,7 @@
 fastapi
 uvicorn
-google-generativeai
-duckduckgo_search==6.1.7
-python-dotenv
 pydantic
+google-generativeai
+ddgs
+python-dotenv
+googlesearch-python
