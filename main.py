@@ -244,7 +244,7 @@ app = FastAPI(title="English Tutor Agent API (Gemini)")
 # Allow requests from your Next.js frontend (adjust origin in production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://english-tutor-ai-app.netlify.app/"],  # Next.js default port
+    allow_origins=["https://english-tutor-ai-app.netlify.app"],  # Next.js default port
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
